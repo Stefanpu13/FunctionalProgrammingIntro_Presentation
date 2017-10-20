@@ -26,6 +26,7 @@ let maleLastNames = [|
     "simeonov"
     "kirov"    
 |]
+
 let femaleFirstNames = [|
     "gergana"
     "hristina"
@@ -51,20 +52,22 @@ let femaleLastNames = [|
 let genders = [|"m";"f"|]
 
 let generatePerson (rand: Random) =     
-    let getRandomValue (names: 'a []) =
-        let i = rand.Next (names.Length)
-        names.[i]
+    // local functions
+    let getRandomValue (arr: 'a []) =
+        let i = rand.Next (arr.Length)
+        arr.[i]
 
     let personGender = getRandomValue genders
-    let (firstNameArr, lastNameArr) = 
+    // everything is expression
+    let (firstNames, lastNames) = 
         if personGender = "m" then
             maleFirstNames, maleLastNames
         else 
             femaleFirstNames, femaleLastNames 
 
     sprintf "%s %s, %s, %i"
-        (getRandomValue firstNameArr)
-        (getRandomValue lastNameArr)
+        (getRandomValue firstNames)
+        (getRandomValue lastNames)
         personGender
         (getRandomValue [|0..99|])    
 

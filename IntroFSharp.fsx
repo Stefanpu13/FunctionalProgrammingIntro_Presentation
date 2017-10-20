@@ -57,8 +57,19 @@ let f x = x = 2
 // Introduce type inference and function signatures instead
 
 
+// Function bindings also have types and look 
+
 let add a b = a + b
 let substract5 a = a - 5.0
+
+
+// the unit type
+let logToConsole x = printfn "%A" x
+
+logToConsole 12
+
+let logHelloWorld () = printfn "Hello world"
+
 
 // generic params - compiler tries to infer the most generic type
 let maxOf a b c = List.max [a;b;c]
@@ -69,13 +80,6 @@ let twice f x = f (f x)
 
 // returning function and partial application
 let incrementTwice x = twice (add x)
-
-// the unit type
-let logToConsole x = printfn "%A" x
-
-logToConsole 12
-
-let logHelloWorld () = printfn "Hello world"
 
 // little exercises on guessing the type
 

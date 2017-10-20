@@ -1,6 +1,6 @@
 // Types - Records
 // The forward pipe operator
-// Function compositiion
+// Function composition
 
 open System
 
@@ -59,7 +59,6 @@ let getPerson person =
         Gender = personInfo.[1]
         Age = int (personInfo.[2])
     }
-
 
 // test 
 // let personsInfo = 
@@ -133,8 +132,7 @@ let getThirdMostCommonFirstNamePeople peopleByFirstName =
         ) peopleByFirstName
 
     let (_, people) = sortedPeople.[2]
-    people    
-
+    people
 
 (File.ReadAllLines "names.txt") 
 |> Array.map getPerson 
