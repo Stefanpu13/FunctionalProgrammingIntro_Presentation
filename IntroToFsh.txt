@@ -1,0 +1,131 @@
+F# Presentation agenda
+What is the main idea/goal?
+To make people interested in fSharp, or at least leanrning another language that has similar features
+
+I. General overview of the presentation - intro to f# in the light of javascript and c#
+
+II. Plan
+
+1. What is most important to you? (Кое е най-ванжното) - Да ядеш на уя блажното :)
+ What is most important feature of C#
+
+	My efforts:  
+		- create plan for the presentation
+		- practice the presentation to see how much time it takes
+		- create the voting app, deploy and make it visible
+		- recompile the presentation after voting is finished
+	
+	Presetation view:
+		Slide 1 -> guestion(What is most important feature of C#) + link to voting app (6-7 mins)
+		Slide 2 -> results (links to relevant articles) 
+			Visit each site and make short explanation (5-10 mins - questions might arise)
+			Generally, each c# feature is one of the following:
+				- Functional theory feature
+				- feature that expands valid usages of expressions/ adds new expressions/
+				- exprssion that is syntaxic sugar (to achieve consiceness)
+				- OO/Comp Science 
+		Slide 3 (C#7 features - main message  - C# has been getting features that a are part of other languages, since version 2)
+		(Some of those languages are so called "functional" languages)
+		
+		
+	
+	Q: How to make the switch between c# and the need to look at f#?
+		1.(Slide 4) C# is getting more expressive and functional? It seems so...
+			2. Then why bother learn other language, even more functional one, at all?
+				1. What is functional anyway?
+					Def: A style of programming where the basic method of computation is application of functions to arguments. 
+					Q: What other styles we know? Style of programming where the basic method of computation is changing of state
+					through statements AKA imperative. 
+					
+				2. Langauges like C# make it possible to write code in functional style. But it is hard and
+				these languages do not encourage and facilitate writing in functional style
+					2.1 Features that are just coming are not natural to the language or not complete
+					Natural: Local functions; pattern matching, destructuring, AGT
+					Not complete: (patern matching, destructuring, AGT(algebraic data types))
+						2.1.1. Since Features are not natural you will gain only limited understaing of their use, pros/cons
+					or you will hear the (somewhat correct) advice: "Do not use that" this is bad practice/dangerous
+					
+					2.2 You will not see the every-day task/problems solved with 
+					those features (best example - higher order filter, map, iter, vs their loop equivalents)
+					Beginning C#, Java, etc. programmers are not taught these languages in functional style
+					(The first things you learn is reading and writing to console, and asigning to variables.
+					After if, swith, statements come, while, for, statements)
+					
+				3. "A language that doesn't affect the way you think about programming, is not worth knowing." Alan Perlis
+					Java (object oriented, statically typed, garbage collected languages, will not significatly affect the way you think)
+					
+					3.1. Thinking about problems in new ways. Different approach, different view of the world (not better, but different) 				
+			
+		(Slide 5 Why F#?)
+			1. Personal (1-2 min)
+				a. have heard that F# is used in competitive industry as finance, where tooling can give edge
+				b. I friend of mine who is doctor of CS speaks with great love of F#
+				c. I liked how simple some things are with javascript/jquery, and especially liked 
+				the jQuery higher order functions
+				d. I disliked how every class that I`ve seen eventually becomes uncoherent bag of methods
+				(It looked to me as a module( from the JS module pattern)), never saw single design pattern,
+				never saw 
+			2. "Techical" (to the extend these can be called techincal)(1-2 min) - 
+				a. I wanted the language to be used in some industry ( opposed to research languages)
+				and be somewhat mature(Lisp family(Closure, Scheme, LISP), Scala, Haskell, FSharp, Ocaml)
+				b. I did not like LISP family syntax (Scala, Haskell, FSharp, Ocaml)
+				c. I was afraid that diving into pure FP might be to much effort (Scala, FSharp, Ocaml)
+				d. I wanted to have language that is used on a popular platform, where a lot libraries exist(Scala, FSharp)
+				e. I preffered F# due to familiarity with platform 
+					(learning new platform and new paradigm and algoritms and data structures could be too much to handle) 
+					
+		(Slide 6 F# - Wikipedia)
+			a. mature
+			b. functional-first
+			c. cross-platform
+			d. open-source
+			e. implementation of Ocaml on .Net
+	
+		(Slide 7 - More features)
+			a. statically typed
+			b. immatable by defualt
+			c. exression oriented
+			d. functional-first
+			
+		
+		(Slide 8 - First steps)
+			- The REPL (enter a few simple values and and say that you will be using Alt + Enter)
+			- No variables - only immutable bindings (explain output on the REPL (val it : int = 4); 
+			Common form - val "identificator" : "type" = "value")
+			- (value) bindings have types
+				- primitive (string , int float)
+				- more complex = list, array, seq, tuple 
+				- the Unit type
+		(Slide 9 functions - main properties in theory)
+			- No Side effects
+			- same output for same input
+			- Has exacly one input and one output
+		(Slide 10 functions in F#)
+			- (almost)everything is expression(what is the difference between statement and expression)
+				pros: -> 
+					- expressions are composable(will see in a while)
+					- easier to inspect independently
+					- easier to refactor (imagine long if statement where not all branches return - can not easily extract it to a functions)
+				cons: almost any
+				
+				since everything is expression, there is no return statement - the output of a function is the last expression
+			- function bindings
+				- also have types (form val "indentificator" : "ident1": "inputType1" -> ... -> "identN": "outputType")
+				- different types
+				- seeing the unit type in a function signature - a-> unit or unit -> a :
+				    means that the function is doing site effects
+			- Generic params (compiler tries to infer the most generic type)
+			- higher order functions (functions that return functions or functions that receive other functions as params)
+			- partial application
+				
+				
+		(Slide 11 - Demo (Access to .NET))
+			- short description of the problem to solve - just write some names to a file
+			- mutable arrays - syntax;  not idiomatic structure for functional programming but best for the goal
+			- local functions to keep code closer to where it is declared
+			- everythng is expression if then - else is the analog of the thernaly operator; 
+				all paths must return the same value
+			- Writing to a file - easy interoperability
+		
+		
+			
